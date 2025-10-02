@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Trigger Event</title></head>
+<body>
+  <h1>Trigger RemoteEvent</h1>
+  <button id="fire">Fire RemoteEvent</button>
+
+  <script>
+    document.getElementById("fire").addEventListener("click", async () => {
+      const res = await fetch("/trigger", { method: "POST" });
+      alert(await res.text());
+    });
+  </script>
+</body>
+</html>
